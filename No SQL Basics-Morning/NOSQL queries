@@ -1,0 +1,28 @@
+Q1. Find all hotels with ratings for Cleanliness>=4
+
+Ans -
+
+SELECT table2.name as Hotel_Name, ARRAY_AVG(table2.Cleanliness) as Cleanliness_Rating
+FROM (SELECT name, reviews[*].ratings[*].Cleanliness
+FROM `travel-sample`
+WHERE type = "hotel") table2
+WHERE ARRAY_AVG(table2.Cleanliness) >= 4
+ORDER BY Cleanliness_Rating DESC;
+
+Q2. Find the highest airport in each country.
+
+Ans -
+
+SELECT table2.country, ARRAY t.airportname FOR t IN table2.airports
+WHEN t.altitude = table2.max_altitude END as Airport, max_altitude
+FROM  (SELECT country, array_agg({airportname, "altitude" : geo.alt}) airports, max(geo.alt) as max_altitude
+FROM `travel-sample`
+WHERE type = "airport"
+GROUP BY country) table2;
+
+Q3. Find all routes operated by Air France from the city of Marseille. (use field faa)
+
+Ans -
+
+SELECT * FROM `travel-sample` t 
+WHERE type = "route" AND airline = "AF" AND t.sourceairport = "MRS";
