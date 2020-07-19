@@ -1,0 +1,17 @@
+Task 2 query -
+
+SELECT DOC.NAME AS DOCTOR,
+DOC."HIGHEST QUALIFICATION",
+DOC.EXPERIENCE,
+DEPT.DEPT_NAME,
+PATIENT.NAME AS PATIENT_NAME,
+PATIENT.DATE_ADMITTED,
+PATIENT.DATE_DISCHARGED,
+PATIENT.WARD_ID
+FROM DOCTOR DOC LEFT JOIN  DEPARTMENT DEPT ON DOC.DEPARTMENT_ID = DEPT.DEPT_ID LEFT JOIN PATIENT ON PATIENT.DOCTOR_ID = DOC.ID ;
+
+..............................................................................................................................................................................................................................................................................................................................................................................................
+
+Task 3 query -
+
+Select DATE_DISCHARGED AS DATE_OF_DISCHARGE ,count(*) AS COUNT from PATIENT where DATE_DISCHARGED>=sysdate-7 group by DATE_DISCHARGED;
