@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    	<title>Js Assignment</title>
+    	<style>
+    		#Question1, #Question2{
+    			font-weight: bold;
+    		}
+    	</style>
+    	<script>
+         function check_if_valid(str) {
+            reg1 = /[hdn]o+t$/;//reg for end condition
+            reg2 = /^[hdn]ot/;//reg for beginning condition
+            //console.log(str);
+            if(reg1.test(str) && reg2.test(str))
+				document.getElementById("output").innerHTML = "True";
+			else
+				document.getElementById("output").innerHTML = "False";
+         }
+
+         function print_array(){
+         	var arr = [30,20,10,5,60,70,9,34,789];
+         	document.getElementById("original_array").innerHTML = "Original array: " + arr.toString();
+         	arr = arr.sort((a,b) => a-b);//sorting
+         	document.getElementById("sorted_array").innerHTML = "Sorted array: " + arr.toString();
+         	var arr2 = arr.filter((val) => val>10);//filtering
+         	document.getElementById("filtered_array").innerHTML = "Filtered array: " + arr2.toString();
+         	var arr2 = arr2.map((val) => val+1);//adding 1
+         	document.getElementById("mapped_array").innerHTML = "Array after adding 1: " + arr2.toString();
+         	document.getElementById("sliced_array").innerHTML = "Sliced array: " + arr2.slice(1,5).toString();//from 1st to 4th index
+         }
+      </script>
+ 	</head>
+
+  <body>
+  	<section id = "Question1">
+  	Question 1 input: <input type="text" name="question1_inp" placeholder="Enter string to check" id="q1_inp"> <button onclick="check_if_valid(document.getElementById('q1_inp').value)">Valid String?</button> <p id="output"></p>
+  	</section>
+  	<hr>
+  	<section id = "Question2">
+  	Question 2 output: <button onclick="print_array()">Click to print array</button> <p id="original_array"></p><p id="sorted_array"></p><p id="filtered_array"></p><p id="mapped_array"></p><p id="sliced_array"></p>
+  	</section>
+  </body>
+</html>
