@@ -8,7 +8,7 @@ Composite pattern is used where we need to treat a group of objects in similar w
 
 The Composite pattern lets you run a behavior recursively over all components of an object tree.
 
-This pattern creates a class that contains group of its own objects. This class provides ways to modify its group of same objects.It allows you to have a tree structure and ask each node in the tree structure to perform a task. **As described by Gof :**, 
+This pattern creates a class that contains group of its own objects. This class provides ways to modify its group of same objects.It allows you to have a tree structure and ask each node in the tree structure to perform a task. **As described by Gof :** 
 >Compose objects into tree structure to represent part-whole hierarchies. Composite lets client treat individual objects and compositions of objects uniformly.
 
 ---
@@ -21,9 +21,7 @@ The Composite Pattern has four participants:
 
 * **Component** – Component declares the interface for objects in the composition and for accessing and managing its child components. It also implements default behavior for the interface common to all classes as appropriate.
 * **Leaf** – Leaf defines behavior for primitive objects in the composition. It represents leaf objects in the composition. Usually, leaf components end up doing most of the real work, since they don’t have anyone to delegate the work to.
-* **Composite** – The Container (aka composite) is an element that has sub-elements: leaves or other containers. A container doesn’t know the concrete classes of its children. It works with all sub-elements only via the component interface.
-
-Upon receiving a request, a container delegates the work to its sub-elements, processes intermediate results and then returns the final result to the client.
+* **Composite** – The Container (aka composite) is an element that has sub-elements: leaves or other containers. A container doesn’t know the concrete classes of its children. It works with all sub-elements only via the component interface. Upon receiving a request, a container delegates the work to its sub-elements, processes intermediate results and then returns the final result to the client.
 * **Client** – Client manipulates the objects in the composition through the component interface.
 
 ---
@@ -54,9 +52,7 @@ The `CompoundGraphic` class is a container that can comprise any number of sub-s
 
 The client code works with all shapes through the single interface common to all shape classes. Thus, the client doesn’t know whether it’s working with a simple shape or a compound one. The client can work with very complex object structures without being coupled to concrete classes that form that structure.
 
----
-
-### Pseudocode
+_Pseudocode_
 
 ```JAVA
  // The component interface declares common operations for both
