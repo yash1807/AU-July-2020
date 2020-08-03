@@ -1,0 +1,32 @@
+<div class="usercontact-list">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Employee Id</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Age</th>
+        <th>City</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usercon of usercontacts">
+        <td>{{ usercon.emp_id }}</td>
+        <td>{{ usercon.firstname }}</td>
+        <td>{{ usercon.lastname }}</td>
+        <td>{{ usercon.age }}</td>
+        <td>{{ usercon.city }}</td>
+        <td>
+          <button class=" btn btn-primary " (click)="editUserContact(usercon) ">Edit</button>
+        </td>
+        <td>
+          <button class="btn btn-danger ml-2 " (click)="deleteUserContact(usercon) ">Delete</button>
+        </td>
+      </tr>
+
+
+    </tbody>
+  </table>
+</div>

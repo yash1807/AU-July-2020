@@ -1,0 +1,40 @@
+<div class="col-md-6">
+  <h2 class="text-center">Enter User details</h2>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="firstname">First Name:</label>
+      <input formControlName="firstname" placeholder="First Name" name="firstname" class="form-control" id="firstname">
+      <div class="feedback-red" *ngIf="isInvalid('firstname')">
+        First Name is empty.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="lastname">Last Name:</label>
+      <input formControlName="lastname" placeholder="Last name" name="lastname" class="form-control" id="lastname">
+      <div class="feedback-red" *ngIf="isInvalid('lastname')">
+        Last Name is empty.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="age">Age:</label>
+      <input formControlName="age" placeholder="Age" name="age" class="form-control" id="age">
+      <div class="feedback-red" *ngIf="isInvalid('city')">
+        Age is empty.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="city">City:</label>
+      <input type="city" formControlName="city" placeholder="City" name="city" class="form-control" id="city">
+      <div class="feedback-red" *ngIf="isInvalid('city')">
+        City is empty.
+      </div>
+    </div>
+
+    <button button [disabled]="addForm.invalid" class="btn btn-success">Submit</button>
+    <button class="btn btn-danger ml-2 " (click)="onCancel()">Cancel</button>
+  </form>
+</div>
