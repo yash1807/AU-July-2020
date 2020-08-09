@@ -1,0 +1,38 @@
+Account Table - 
+
+CREATE TABLE `account` (
+  `Account_id` int NOT NULL,
+  `User_id` int NOT NULL,
+  `Account_type` varchar(45) NOT NULL,
+  `Account_balance` int NOT NULL,
+  `Transaction_Password` varchar(40) NOT NULL,
+  PRIMARY KEY (`Account_id`),
+  KEY `User_id_idx` (`User_id`),
+  CONSTRAINT `User_id` FOREIGN KEY (`User_id`) REFERENCES `user` (`User_id`) ON DELETE CASCADE ON UPDATE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+==============================================================================================================================
+
+Audit Table - 
+
+CREATE TABLE `audit` (
+  `Audit_id` int NOT NULL,
+  `Account_id` int NOT NULL,
+  `Acc_balance_initial` int NOT NULL,
+  `Acc_balance_final` int NOT NULL,
+  PRIMARY KEY (`Audit_id`),
+  KEY `Account_id_idx` (`Account_id`),
+  CONSTRAINT `Account_id` FOREIGN KEY (`Account_id`) REFERENCES `account` (`Account_id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+==============================================================================================================================
+
+User Table - 
+
+CREATE TABLE `user` (
+  `User_id` int NOT NULL,
+  `User_name` varchar(45) NOT NULL,
+  `User_contact` varchar(40) DEFAULT NULL,
+  `User_address` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`User_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
