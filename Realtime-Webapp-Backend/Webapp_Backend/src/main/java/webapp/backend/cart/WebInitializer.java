@@ -1,7 +1,8 @@
-package com.maven.webapp.cart;
+package webapp.backend.cart;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
-import com.maven.webapp.cart.config.SpringConfig;
+
+import webapp.backend.cart.config.SpringConfig;
 
 public class WebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 

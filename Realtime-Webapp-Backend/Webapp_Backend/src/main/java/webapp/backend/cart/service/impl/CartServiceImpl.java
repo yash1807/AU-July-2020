@@ -1,14 +1,13 @@
-package com.maven.webapp.cart.service.impl;
-
-import com.maven.webapp.cart.service.CartDao;
-import com.maven.webapp.cart.service.CartService;
+package webapp.backend.cart.service.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.maven.webapp.cart.model.Item;
+import webapp.backend.cart.model.Item;
+import webapp.backend.cart.service.CartDao;
+import webapp.backend.cart.service.CartService;
 
 @Service
 public class CartServiceImpl implements CartService{

@@ -1,4 +1,4 @@
-package com.maven.webapp.cart.controller;
+package webapp.backend.cart.controller;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.maven.webapp.cart.model.Item;
-import com.maven.webapp.cart.service.CartService;
+import webapp.backend.cart.model.Item;
+import webapp.backend.cart.service.CartService;
 
 @RestController
 public class ItemController {

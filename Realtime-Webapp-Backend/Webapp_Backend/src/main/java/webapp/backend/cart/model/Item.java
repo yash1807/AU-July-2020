@@ -1,4 +1,4 @@
-package com.maven.webapp.cart.model;
+package webapp.backend.cart.model;
 
 public class Item {
 	private int id;

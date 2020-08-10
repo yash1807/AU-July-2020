@@ -1,9 +1,9 @@
-package com.maven.webapp.cart.service;
+package webapp.backend.cart.service;
 
 
 import java.util.List;
 
-import com.maven.webapp.cart.model.Item;
+import webapp.backend.cart.model.Item;
 
 public interface CartService {
 	public long addNewItem(Item item);

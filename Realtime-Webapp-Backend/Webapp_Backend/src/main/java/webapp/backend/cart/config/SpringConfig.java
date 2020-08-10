@@ -1,5 +1,5 @@
 
-package com.maven.webapp.cart.config;
+package webapp.backend.cart.config;
 import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan({ "com.maven.webapp.cart" })
+@ComponentScan({ "webapp.backend.cart" })
 public class SpringConfig {
 
 	@Bean

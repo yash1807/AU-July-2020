@@ -1,4 +1,4 @@
-package com.maven.webapp.cart.service.impl;
+package webapp.backend.cart.service.impl;
 
 import java.sql.PreparedStatement;
 import java.sql.Statement;
@@ -10,8 +10,8 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
-import com.maven.webapp.cart.model.Item;
-import com.maven.webapp.cart.service.CartDao;
+import webapp.backend.cart.model.Item;
+import webapp.backend.cart.service.CartDao;
 
 @Repository
 public class CartDaoImpl implements CartDao {
