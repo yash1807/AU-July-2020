@@ -1,0 +1,20 @@
+<main class="container">
+  <section class="product">
+    <form [formGroup]="addProductForm" class="form-container">
+      <input formControlName="name" type="text" placeholder="Name*" />
+      <span *ngIf="!addProductForm.get('name').valid">Name has error</span>
+      <input formControlName="description" type="text" placeholder="Description*" />
+      <input formControlName="category" type="text" placeholder="Category*" />
+      <input formControlName="imageUrl" type="text" placeholder="Image URL*" />
+      <input formControlName="price" type="text" placeholder="Price*" />
+      <button *ngIf="addForm" (click)="addProductProductComponent()" [disabled]="!addProductForm.valid">Add Product</button>
+      <!-- <button *ngIf="!addForm" (click)="delete()" >Delete Product</button> -->
+    </form>
+    <div class="preview">
+      <img src="{{ addProductForm.get('imageUrl').value }}" alt="">
+      <h3>{{ addProductForm.get('name').value }}</h3>
+      <p class="description">{{ addProductForm.get('description').value }}</p>
+      <h4>Price {{ addProductForm.get('price').value }}</h4>
+    </div>
+  </section>
+</main>

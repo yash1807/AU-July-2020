@@ -1,0 +1,14 @@
+<section class="container">
+  <div class="search-container">
+    <input type="text" placeholder="Search for product(name/category)" [(ngModel)]="searchText" /> <button (click)="searchProduct()">Search</button>
+  </div>
+  <div class="result-container">
+    <ng-container *ngFor="let product of products">
+      <div class="result">
+        <h3 (click)="viewProduct(product)">{{ product.name }}</h3>
+        <p>{{ product.description }}</p>
+        <h2>price {{ product.price }}</h2>
+      </div>
+    </ng-container>
+  </div>
+</section>

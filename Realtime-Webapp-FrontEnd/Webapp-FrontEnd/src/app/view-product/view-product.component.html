@@ -1,0 +1,5 @@
+
+<div>
+  <app-product [product]="viewComponentProduct" [adding]="false" (deleteProduct)="deleteProduct($event)"></app-product>
+  <app-product [product]="viewComponentProduct" [adding]="true" (updateProduct)="updateProduct($event)"></app-product>
+</div>
